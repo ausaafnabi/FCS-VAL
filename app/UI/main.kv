@@ -1,0 +1,15 @@
+ScreenManager:
+    Screen:
+        name: 'Startup'
+        BoxLayout:
+        # other UI controls -- not shown
+            Button:
+                text: 'Connect'
+                on_press: root.current = 'chatroom'
+    Screen:
+        name: 'chatroom'
+        BoxLayout:
+        # other UI controls -- not shown
+            Button:
+                text: 'Disconnect'
+                on_press: root.current = 'login'
