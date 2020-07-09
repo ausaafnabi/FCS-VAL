@@ -1,0 +1,4 @@
+matplotlib==2.1.1
+numpy==1.13.3
+Kivy==1.11.1
+pyserial==3.4

@@ -8,8 +8,8 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager,Screen
 from kivy.config import Config
 
-#Config.set('graphics','resizable',True)
-Window.size=(700,500)
+#Config.set('graphics','fullscreen','auto')
+Window.size=(Window.width,400)
 Window.borderless=True
 
 Builder.load_file("UI/launcher.kv")

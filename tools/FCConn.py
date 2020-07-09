@@ -16,7 +16,6 @@ conn.close()
 conn.open()
 count=1
 while True:
-
 	data = conn.readline()
 	print(data.decode())
 	dataArray = data.decode().split('\t')
@@ -28,5 +27,7 @@ while True:
 		i +=1
 		plt.show()
 		plt.pause(0.0001)
+		if (count>100):
+			break
 
 
