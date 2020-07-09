@@ -1,5 +1,5 @@
 import kivy
-from kivy.app import App
+from kivymd.app import MDApp as App
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager,Screen
@@ -15,7 +15,7 @@ Builder.load_file("UI/main.kv")
 
 class main(Screen):
 	def build(self):
-		pass
+		pass	
 	def open_graph(self):
         	from subprocess import Popen,PIPE
         	process = Popen(['python3', '../tools/FCConn.py'],stdout=PIPE,stderr=PIPE)
@@ -27,7 +27,7 @@ screen_manager.add_widget(main(name="main"))
 
 class mainApp(App):
     def build(self):
-        #button = Button(text="Exit",size_hint=(0.2,0.1))
+        self.theme_cls.theme_style = "Dark"
         return main()
 
 if __name__ == "__main__":

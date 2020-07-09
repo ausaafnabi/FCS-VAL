@@ -15,14 +15,12 @@
 		spacing: 10
 		space_x: self.size[0]/8
 		#height: 100
-		Header: 
+		Header: 											# HERE WE HAVE THE HEADER WIDGET
 			
 		BoxLayout:
 			orientation: 'horizontal'
 			padding: 10 , 5
-			
-			# THERE WE HAVE THE SIDEBAR WIDGET TO BE STORED
-			Sidebar:
+			Sidebar:										# HERE WE HAVE THE  SIDEBAR WIDGET 
 			
 			BoxLayout:
 				orientation: 'vertical'
@@ -33,7 +31,7 @@
 				Button:
 					text: ' Logger'
 					size_hint_y: .3
-			GraphPanel:					#THERE WE HAVE THE GRAPHPANEL
+			GraphPanel:									# HERE WE HAVE THE GRAPHPANEL WIDGET
 			BoxLayout:
 				size_hint_x: .35
 				orientation: 'vertical'
