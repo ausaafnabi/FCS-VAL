@@ -14,7 +14,7 @@ class main(Screen):
 		pass
 	def open_graph(self):
         	from subprocess import Popen,PIPE
-        	process = Popen(['python3','../tools/FCConn.py'],stdout=PIPE,stderr=PIPE)
+        	process = Popen(['python3', '../tools/FCConn.py'],stdout=PIPE,stderr=PIPE)
 
 screen_manager = ScreenManager()
 #screen_manager.add_widget(launcher(name="launcher"))
