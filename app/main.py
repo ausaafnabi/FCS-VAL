@@ -6,7 +6,11 @@ from kivy.uix.screenmanager import ScreenManager,Screen
 kivy.require('1.9.0')
 
 Window.size=(800,600)
+Window.minimum_width,Window.minimum_height = (400,300)
 
+Builder.load_file("UI/Components/Header.kv")
+Builder.load_file("UI/Components/GraphPanel.kv")
+Builder.load_file("UI/Components/Sidebar.kv")
 Builder.load_file("UI/main.kv")
 
 class main(Screen):
