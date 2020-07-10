@@ -9,50 +9,80 @@ BoxLayout:
 	orientation: 'vertical'
 	MDToolbar:
 		size_hint_y: .1
-		title: "MDToolbar"
-		md_bg_color: color("#FF0066")#app.theme_cls.purple_color
+		title: "FCS-VAL"
+		md_bg_color: app.theme_cls.bg_dark
 	BoxLayout:
 		orientation: 'horizontal'
 		size_hint_x: .9
-		BoxLayout:
+		MDCard:
 			orientation: 'vertical'
 			size_hint_x: .05
-			MDRectangleFlatButton:
-				text: "Hello World"
+			spacing: 5
+			Button:
+				text: "1"
+				size: (30,30)  
 				halign: "center"
-			MDRectangleFlatButton:
-				text: "Hello World"
+			Button:
+				text: "2"
+				size: (30,30)
 				halign: "center"
-			MDRaisedButton:
-				text: "Hello World"
+			Button:
+				text: "3"
+				size: (30,30)
 				halign: "center"
+		
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint_x: .65
+			padding: [10 , 10]
+			spacing: 10
+			MDCard:
+				size_hint_y: .65
+				md_bg_color: app.theme_cls.bg_darkest
+				BoxLayout:
+					orientation: "vertical"
+					MDToolbar:
+						title: "Behaviours"
+						#size_hint_y: .05
+						md_bg_color: color("#FF0066")
+					Label:
+						text: "ControlPanel"
+						#size_hint_y: .95
+						halign: "center"
+			MDCard:
+				size_hint_y: .25
+				md_bg_color: app.theme_cls.bg_darkest
+				BoxLayout:
+					orientation: "vertical"
+					MDToolbar:
+						title: "Logger"
+						#size_hint_y: .05
+						md_bg_color: color("#FF0066")
+					Label:
+						text: "Logger"
+						#size_hint_y: .95
+						halign: "center"
+		BoxLayout:
+			orientation: 'vertical'
+			padding: [5,5]
+			size_hint_x: .2
+			MDCard:
+				#MDRaisedButton:
+				#	text: "ControlPanel"
 		
 		BoxLayout:
 			orientation: 'vertical'
 			size_hint_x: .45
-			MDLabel:
-				text: "ControlPanel"
-				halign: "center"
-			Label:
-				text: "Logger"
-				halign: "center"
-		
-		BoxLayout:
-			orientation: 'vertical'
-
-			size_hint_x: .1
-			MDRaisedButton:
-				text: "ControlPanel"
-		
-		BoxLayout:
-			orientation: 'vertical'
-			size_hint_x: .35
-			MDLabel:
-				text: "ControlPanel"
-				halign: "center"
-			MDLabel:
-				text: "Logger"
-				halign: "center"
+			padding: [10,10]	
+			spacing: 10
+			MDCard:
+				MDLabel:
+					text: "Graph1"
+					halign: "center"
+			MDCard:
+				MDLabel:
+					text: "Log"
+					halign: "center"
 
 '''
 
