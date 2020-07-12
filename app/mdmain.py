@@ -1,122 +1,48 @@
 from kivy.uix.boxlayout import BoxLayout
-
+from kivy.core.window import Window
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
 from kivymd.uix.tab import MDTabsBase
+#from Components import ControlPanel
+from controlpanel import ControlPanel
+Window.minimum_width,Window.minimum_height = (700,500)
 
-
+#============to remove when segregate grapher func==================
+from matplotlib import style
+from kivy.garden.matplotlib.backend_kivyagg import FigureCanvasKivyAgg
+import matplotlib.pyplot as plt
+style.use("dark_background")
+#=================================================================
 KV = '''
-#:import color kivy.utils.get_color_from_hex
-BoxLayout:
-	orientation: 'vertical'
-	MDToolbar:
-		size_hint_y: .1
-		title: "FCS-VAL"
-		md_bg_color: app.theme_cls.bg_dark
-	BoxLayout:
-		orientation: 'horizontal'
-		size_hint_x: .9
-		MDCard:
-			orientation: 'vertical'
-			size_hint_x: .05
-			spacing: 5
-			Label:
-				text: ""
-				size_hint_y: .05
-			Button:
-				text: "1"
-				size_hint_y: .1   
-				halign: "center"
-			Button:
-				text: "2"
-				size_hint_y: .1 
-				halign: "center"
-			Button:
-				text: "3"
-				size_hint_y: .1
-				halign: "center"
-			Label:
-				text: ""
-		
-		BoxLayout:
-			orientation: 'vertical'
-			size_hint_x: .65
-			padding: [10 , 10]
-			spacing: 10
-			MDLabel:
-				text: "DashBoard"
-				font_style: "H3"
-				size_hint_y: .1
-			MDCard:
-				size_hint_y: .55
-				md_bg_color: app.theme_cls.bg_darkest
-				radius: [20,10,20,10]
-				BoxLayout:
-					orientation: "vertical"
-					MDToolbar:
-						title: "Behaviours"
-						size_hint_y: .1
-						md_bg_color: color("#FF0066")
-					Label:
-						text: "ControlPanel"
-						size_hint_y: .9
-						halign: "center"
-			MDCard:
-				size_hint_y: .25
-				md_bg_color: app.theme_cls.bg_darkest
-				radius: [20,10,20,10]
-				BoxLayout:
-					orientation: "vertical"
-					MDToolbar:
-						title: "Logger"
-						size_hint_y: .2
-						md_bg_color: color("#FF0066")
-					Label:
-						text: "Logger"
-						size_hint_y: .8
-						halign: "center"
-		BoxLayout:
-			orientation: 'vertical'
-			padding: [5,5]
-			size_hint_x: .2
-			MDCard:
-				radius: [20,10,20,10]
-				BoxLayout:
-					orientation: 'vertical'
-					MDToolbar:
-						title: 'graph properties'
-						md_bg_color: color("#FF0066")
-				#MDRaisedButton:
-				#	text: "ControlPanel"
-		
-		BoxLayout:
-			orientation: 'vertical'
-			size_hint_x: .45
-			padding: [10,10]	
-			spacing: 10
-			MDCard:
-				radius: [20,10,20,10]
-				MDLabel:
-					text: "Graph1"
-					halign: "center"
-			MDCard:
-				radius: [20,10,20,10]
-				MDLabel:
-					text: "Log"
-					halign: "center"
-		#MDFloatingActionButton:
-		#	icon: "plus"
-		#	pos: 20,20
+
 '''
+plt.plot([1,23,2,5])
+plt.ylabel('some number')
 
 class Tab(FloatLayout,MDTabsBase):
 	pass
+class Graph(BoxLayout):
+	pass
+
+class Grapher(BoxLayout):
+	def __init__(self,**kwargs):
+		super().__init__(**kwargs)
+		self.add_widget(FigureCanvasKivyAgg(plt.gcf()))
+
+class LogTable(BoxLayout):
+	pass
+
+class GraphProperties(BoxLayout):
+	pass
+
+class Logger(BoxLayout):
+	pass 
 
 class TestUI(MDApp):
 	def build(self):
 		self.theme_cls.theme_style = "Dark"
-		return Builder.load_string(KV)
+		return Builder.load_file("UI/mdmain.kv")
 
 TestUI().run()
 
