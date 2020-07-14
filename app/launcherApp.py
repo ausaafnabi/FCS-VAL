@@ -19,7 +19,7 @@ class launcher(Screen):
         pass    
     def open_launcher_with_device(self):
         from subprocess import Popen,PIPE
-        process = Popen(['python3', 'main.py'],stdout=PIPE,stderr=PIPE)
+        process = Popen(['python3', 'mdmain.py'],stdout=PIPE,stderr=PIPE)
 
 screen_manager = ScreenManager()
 
